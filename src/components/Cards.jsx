@@ -28,14 +28,18 @@ const Cards = (props) => {
 
     const [prev, setPrev] = useState(-1)
 
-    const check = (current) => {
+    function check (current) {
         if(items[current].id == items[prev].id){
             items[current].state = "correct"
             items[prev].state = "correct"
+            console.log(items[current]);
+            console.log(items[prev]);
             setPrev(-1)
         }else{
             items[current].state = "wrong"
             items[prev].state = "wrong"
+            console.log(items[current]);
+            console.log(items[prev]);
             setItems([...items])
             setTimeout(() => {
                 items[current].state = ""
@@ -44,7 +48,7 @@ const Cards = (props) => {
             }, 1000)
         }
     }
-    const flipCard = (id) => {
+    function flipCard(id){
         if(prev === -1) {
             items[id].state = "active"
             setItems([...items])
