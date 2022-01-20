@@ -37,7 +37,7 @@ const Cards = (props) => {
         }
     }
     function flipCard(id){
-        if(!fliped) {
+        if(!fliped && items[id].state !== "correct") {
             if(prev === null) {
                 items[id].state = "active"
                 setItems([...items])
