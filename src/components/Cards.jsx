@@ -11,7 +11,7 @@ const Cards = (props) => {
 
     React.useEffect(() => {
         async function fetchData() {
-            const cartData = await axios.get('https://61b8b44138f69a0017ce5cd7.mockapi.io/Memory_game');
+            const cartData = await axios.get('data.json');
             setItems(cartData.data.sort(() => Math.random() - 0.5));
         }
             fetchData();
